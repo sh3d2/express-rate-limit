@@ -46,7 +46,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "eslint . && mocha",
     "precommit": "pretty-quick --staged"
   }
 }
