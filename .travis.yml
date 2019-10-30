@@ -1,26 +1,15 @@
 language: node_js
 node_js:
-  - 6
-  - 8
-  - 10
-  - stable
+- 6
+- 8
+- 10
+- stable
 
-# wait until after all node.js versions pass before deploying
-# https://docs.travis-ci.com/user/build-stages/deploy-npm/
-
-stages:
-  - test
-  - name: deploy
-
-jobs:
-  include:
-    - stage: deploy
-      node_js: stable
-      script: skip
-      deploy:
-        provider: npm
-        email: sh3d2.pl@gmail.com
-        api_key:
-          secure: EvmRiHaJGVzQDl/L16YpVXwVj2yjPErNHtxKE1F0JdbFUEe52rI+E7oBnuMwUsmzwTfUkdBdDBA/H2JV6roinN6SDjPNyPOb6EL74kSyG+bAMq8M5l0D+RdoTBbAzZo9jTaKEkUEvnQ7oayk1766LXEIeQlowk2A+kAFuQe1gLI2PumMmBq1Fd4Oh3fEoyr+e76zILpquiR7R0Woxa4H2eNRyqDrir/ZPZZI+XdWOFQO1qa0yUH7LY/9lIWf/9A2C+rDM6dTMwHrAnM/vXgbPc4fza7UW1iHZagisEdpqyXibo3SR45aHUAyQE070P2DTb+S1zrtzRgsJGD69CjmpKGzxq9k7aW4MftxVQdfQ3RnHcznTSwEIzFhdV51dsoxsYgCuZJT1WM5i269Y5kscUDVtKSYkETIOujnG8rGB6IqZzF5RP02tyAeevZlmYeHDIF7kaPAEDyEk+NO8C+EOzkgcdbtL1MnZIHlT4STwKcRSgesem2IaYl8mzOtxAFM03AHbgIQzdUA2xPL0QzfmqZY9CUC5fvUgpFeaAxbGIxohsK5IiH5lYVYSYyEwRJ7CUc4KTeovmXXMzzAsBO7RIWm8ujoD6IWmdyRMsYRVPuPwQRQ4lqcKfeUKjH8J5KD4+wE9eJnpm0Waoxpny0tAGWv+uu83cZvQ3ZUPdtWXx0=
-        on:
-          tags: true
+deploy:
+  provider: npm
+  email: sh3d2.pl@gmail.com
+  api_key:
+    secure: Q4BNG5T38emu+fO9iUZa7PFq2yV1FPG2TkU+0Wd6OLFz9TgDxYJcwwfilobGx73QXHV3EkdBiDAWLdjcOWCdmN8NY0Zqj7fsKG//VMyJAC8Al3qO/wH4vNyP6bMSmdCuljAip7bSFuD0nhffXtmlhSVTrxQbDRelFTY2OHUryJpKtDm3tLNtQdDfXAknwc8Ss2JM3KHb7E1dlCE1ghtBM0loNbck/qxvy+oRSMFScMml2S33ak0RVBGcnjBqsL75x8C9lnFtYCT+nyuLszyW8Qa523SxtW5qI1w+Akwik4f5Z4FFiixlFbtARj8lGDxvpDOe66iSlmxjDi4duqqDXaPDE8KsAJ0CM8kpKar10d4nmTE9W6hsajItYq+81u23XKEofpghQ2+sl56lCKIb/AQz8WFddc3kB7SPahf1ElQBBRHjoVTmXeA1e26XQUkKXhK821G0RHMCs+bxaruyyP1bmZ4k0SVsXbqiM+ZfkeU7M+Pyok8h9FO2IXX+uFgt7rLwbajxCQQt52UsBTyOrrkokbbIBGXxj1Jh1OXO/0un/b4h/BrVbtpuqdqndg7rMN9fjNtVmsizCz4mYG9Ju+snZx7rWL9zKdPqGeYl0qDv7NyAxIwqMiJW8GxLS6YhVJGomzn0Y+YG+z4JJLx5FwmxYFMj39BLN+G18S2ZZqM=
+  on:
+    tags: true
+    repo: sh3d2/express-rate-limit
