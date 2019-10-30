@@ -5,16 +5,20 @@ node_js:
 - 10
 - stable
 
+stages:
+  - test
+  - name: deploy
+
 jobs:
   include:
-    - stage: deploy
-      node_js: stable
-      script: skip
-      deploy:
-        provider: npm
-        email: sh3d2.pl@gmail.com
-        api_key:
-          secure: Q4BNG5T38emu+fO9iUZa7PFq2yV1FPG2TkU+0Wd6OLFz9TgDxYJcwwfilobGx73QXHV3EkdBiDAWLdjcOWCdmN8NY0Zqj7fsKG//VMyJAC8Al3qO/wH4vNyP6bMSmdCuljAip7bSFuD0nhffXtmlhSVTrxQbDRelFTY2OHUryJpKtDm3tLNtQdDfXAknwc8Ss2JM3KHb7E1dlCE1ghtBM0loNbck/qxvy+oRSMFScMml2S33ak0RVBGcnjBqsL75x8C9lnFtYCT+nyuLszyW8Qa523SxtW5qI1w+Akwik4f5Z4FFiixlFbtARj8lGDxvpDOe66iSlmxjDi4duqqDXaPDE8KsAJ0CM8kpKar10d4nmTE9W6hsajItYq+81u23XKEofpghQ2+sl56lCKIb/AQz8WFddc3kB7SPahf1ElQBBRHjoVTmXeA1e26XQUkKXhK821G0RHMCs+bxaruyyP1bmZ4k0SVsXbqiM+ZfkeU7M+Pyok8h9FO2IXX+uFgt7rLwbajxCQQt52UsBTyOrrkokbbIBGXxj1Jh1OXO/0un/b4h/BrVbtpuqdqndg7rMN9fjNtVmsizCz4mYG9Ju+snZx7rWL9zKdPqGeYl0qDv7NyAxIwqMiJW8GxLS6YhVJGomzn0Y+YG+z4JJLx5FwmxYFMj39BLN+G18S2ZZqM=
-        on:
-          tags: true
-          repo: sh3d2/express-rate-limit
+  - stage: deploy
+    node_js: stable
+    script: skip
+    deploy:
+      provider: npm
+      email: sh3d2.pl@gmail.com
+      api_key:
+        secure: TCAS2HyX3Yh4UUvW/dJGodhXazx8q6KcJoryN+eCG+2Xcmz7BPRFtmk7DTEadTcZrA/KIXB5IkX09p1cZBj8BaP6kkpnoYPumPzCm9TItbWk3soFboleIRX02Q/egMFk7d6jEy97fgTEx53mZAVl8ZxXjmULeN9UOJal3mZ1NPogt82uSjr1j/I2lOtj9Fju/MwiVs1Q+P7Y+75G1HYtpVHvpU1oeBmFET05Bj/Rkt3NT3zMCAcJe6jbTNM9qSQgcfOTpnAFbvn1gEKl9fRMymYPG6PX/MzKEpH37axNGyvXRraa8bXIoCTZQaPNov3UOQKJc7m59stRemdB+CoWkULLiiaasP34+Bx9CVinREtGxM7gLWOOA7sFGGzQRBaS6P72wWU947GcEv7mVF/UmOIGH8OKZL7FV+ft5cQX3V24W28JdUdxWA3PebIxMq5LOZnxWmPP+5j9/OffxUzcVJgCdhRaMYN2l7NQueWO+Xol7a2N3obI/E7bV6cWulBTDnXOQiUBbDvSZCptN5TC1TTtA8Tcm6zzuVfpS+LctZqbzEnlBmqGwR6NgZdeWFC8QhOUnBUI/8VgYB5+MCHWhSpQOGDiWjUHXb6+wofHxTNlzHnysMBbN8TUioGGGh1KyPi2E6wl1VmGR3zKg5wCFWU0Fo4KDai01Xo62IVTpao=
+      on:
+        tags: true
+        repo: sh3d2/express-rate-limit
