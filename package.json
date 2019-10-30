@@ -1,13 +1,16 @@
 {
-  "name": "express-rate-limit",
-  "version": "5.0.0",
+  "name": "@sh3d2/express-rate-limit",
+  "version": "5.1.0",
   "description": "Basic IP rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset.",
   "homepage": "https://github.com/nfriedly/express-rate-limit",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Nathan Friedly",
     "url": "http://nfriedly.com/"
   },
-  "repository": "nfriedly/express-rate-limit",
+  "repository": "sh3d2/express-rate-limit",
   "license": "MIT",
   "main": "lib/express-rate-limit.js",
   "files": [
@@ -31,7 +34,9 @@
     "brute-force",
     "attack"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "is-promise": "^2.1.0"
+  },
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.2.0",
