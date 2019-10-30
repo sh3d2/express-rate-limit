@@ -11,7 +11,6 @@ node_js:
 stages:
   - test
   - name: deploy
-    if: tag IS present AND repo = 'nfriedly/express-rate-limit'
 
 jobs:
   include:
@@ -20,9 +19,8 @@ jobs:
       script: skip
       deploy:
         provider: npm
-        email: nathan@nfriedly.com
+        email: sh3d2.pl@gmail.com
         api_key:
-          secure:
-            KYoYXfYT3h4qZznrxV2DRmbmkBImdhe5Vz9uExSb6O6enKVWwO/3FVI+NUkAyMRyENgXAieix0ybPrbkHfbmPRpY3OBL/LBIQtK2uWHGwi0JxW7fwOP+Z2mGSwEMK3EAOfQuYx9OhOmT4F+Nvsjf3a6Bt0223Ua1LoHhZicd56M=
+          secure: EvmRiHaJGVzQDl/L16YpVXwVj2yjPErNHtxKE1F0JdbFUEe52rI+E7oBnuMwUsmzwTfUkdBdDBA/H2JV6roinN6SDjPNyPOb6EL74kSyG+bAMq8M5l0D+RdoTBbAzZo9jTaKEkUEvnQ7oayk1766LXEIeQlowk2A+kAFuQe1gLI2PumMmBq1Fd4Oh3fEoyr+e76zILpquiR7R0Woxa4H2eNRyqDrir/ZPZZI+XdWOFQO1qa0yUH7LY/9lIWf/9A2C+rDM6dTMwHrAnM/vXgbPc4fza7UW1iHZagisEdpqyXibo3SR45aHUAyQE070P2DTb+S1zrtzRgsJGD69CjmpKGzxq9k7aW4MftxVQdfQ3RnHcznTSwEIzFhdV51dsoxsYgCuZJT1WM5i269Y5kscUDVtKSYkETIOujnG8rGB6IqZzF5RP02tyAeevZlmYeHDIF7kaPAEDyEk+NO8C+EOzkgcdbtL1MnZIHlT4STwKcRSgesem2IaYl8mzOtxAFM03AHbgIQzdUA2xPL0QzfmqZY9CUC5fvUgpFeaAxbGIxohsK5IiH5lYVYSYyEwRJ7CUc4KTeovmXXMzzAsBO7RIWm8ujoD6IWmdyRMsYRVPuPwQRQ4lqcKfeUKjH8J5KD4+wE9eJnpm0Waoxpny0tAGWv+uu83cZvQ3ZUPdtWXx0=
         on:
           tags: true
