@@ -35,7 +35,9 @@
     "attack"
   ],
   "dependencies": {
-    "is-promise": "^2.1.0"
+    "is-promise": "^2.1.0",
+    "node-common": "^0.3.0",
+    "winston-syslog": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^5.15.3",
